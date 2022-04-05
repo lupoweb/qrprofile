@@ -24,6 +24,14 @@ gem "turbo-rails"
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
 
+#users
+
+gem 'devise'
+
+#omniauth
+
+gem 'omniauth', '~> 1.6', '>= 1.6.1'
+
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
