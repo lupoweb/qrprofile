@@ -27,4 +27,26 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   # def after_omniauth_failure_path_for(scope)
   #   super(scope)
   # end
+
+
+  skip_before_action :verify_authenticity_token
+
+  # def sign_in_with(provider_name)
+  # @user = User.from_omniauth(request.env["omniauth.auth"])
+  # sign_in_and_redirect @user, :event => :authentication
+  # set_flash_message(:notice, :success, :kind => provider_name) if is_navigational_format?
+  # end
+  def all
+    @user = User.from_omniauth(request.env["omniauth.auth"])
+    if @user.persisted?
+      flash.notice = "Signed in!"
+      sign_in_and_redirect @user, :event => :authentication
+    else
+      session["devise.user_attributes"] = @user.attributes
+      puts @user.errors
+      redirect_to new_user_registration_url
+    end
+  end
+
+  alias_method :github, :all
 end

@@ -31,6 +31,7 @@ gem 'devise'
 #omniauth
 
 gem 'omniauth', '~> 1.6', '>= 1.6.1'
+gem 'omniauth-github', '~> 1.1', '>= 1.1.2'
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
@@ -49,6 +50,10 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
+
+#system variables env
+
+gem 'figaro'
 
 # Use Sass to process CSS
 # gem "sassc-rails"
