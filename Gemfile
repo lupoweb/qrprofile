@@ -33,6 +33,9 @@ gem 'devise'
 gem 'omniauth', '~> 1.6', '>= 1.6.1'
 gem 'omniauth-github', '~> 1.1', '>= 1.1.2'
 
+#gem qrcode
+gem "rqrcode", "~> 2.0"
+
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 

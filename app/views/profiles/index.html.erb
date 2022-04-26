@@ -1,1 +1,22 @@
-<li><%= link_to "Logout", destroy_user_session_path, :method => :delete %></li>
+<main class="py-6 px-4 sm:p-6 md:py-10 md:px-8">
+  <div class="max-w-4xl mx-auto grid grid-cols-1 lg:max-w-5xl lg:gap-x-20 lg:grid-cols-2">
+    <div class="relative p-3 col-start-1 row-start-1 flex flex-col-reverse rounded-lg bg-gradient-to-t from-black/75 via-black/0 sm:bg-none sm:row-start-2 sm:p-0 lg:row-start-1">
+      <h1 class="mt-1 text-lg font-semibold text-white sm:text-slate-900 md:text-2xl dark:sm:text-white">Beach House in Collingwood</h1>
+      <div class="flex flex-wrap justify-center">
+        <div class="w-6/12 sm:w-4/12 px-4">
+          <%= image_tag current_user.image_url, class:  'shadow rounded-full max-w-full h-auto align-middle border-none'%>
+          <p></p>
+          <p class="text-sm leading-4 font-medium text-white sm:text-slate-500 dark:sm:text-slate-400"><%=current_user.name%></p>
+        </div>
+      </div>
+    </div>
+    <div class="grid gap-4 col-start-1 col-end-3 row-start-1 sm:mb-6 sm:grid-cols-4 lg:gap-6 lg:col-start-2 lg:row-end-6 lg:row-span-6 lg:mb-0">
+      <%= @svg.html_safe %>
+      <div class="mt-4 col-start-1 row-start-3 self-center sm:mt-0 sm:col-start-2 sm:row-start-2 sm:row-span-2 lg:mt-6 lg:col-start-1 lg:row-start-3 lg:row-end-4">
+        <button type="button" class="bg-gray-800 text-white text-sm leading-6 font-medium py-2 px-3 rounded-lg">Create Card</button>
+        <button type="button" class="bg-gray-800 text-white text-sm leading-6 font-medium py-2 px-3 rounded-lg">Download QrCOde</button>
+      </div>
+    </div>
+  </div>
+</main>
+
