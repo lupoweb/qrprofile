@@ -150,6 +150,8 @@ GEM
       racc (~> 1.4)
     nokogiri (1.13.6-x86_64-darwin)
       racc (~> 1.4)
+    nokogiri (1.13.6-x86_64-linux)
+      racc (~> 1.4)
     oauth2 (1.4.9)
       faraday (>= 0.17.3, < 3.0)
       jwt (>= 1.0, < 3.0)
@@ -233,6 +235,8 @@ GEM
       railties (>= 6.0.0)
     tailwindcss-rails (2.0.8-x86_64-darwin)
       railties (>= 6.0.0)
+    tailwindcss-rails (2.0.8-x86_64-linux)
+      railties (>= 6.0.0)
     thor (1.2.1)
     timeout (0.2.0)
     turbo-rails (7.1.1)
@@ -260,6 +264,7 @@ GEM
 PLATFORMS
   arm64-darwin-20
   x86_64-darwin-21
+  x86_64-linux
 
 DEPENDENCIES
   bootsnap
@@ -289,4 +294,4 @@ RUBY VERSION
    ruby 3.0.0p0
 
 BUNDLED WITH
-   2.2.3
+   2.3.13

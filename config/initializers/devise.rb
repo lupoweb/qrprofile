@@ -309,6 +309,6 @@ Devise.setup do |config|
   # changed. Defaults to true, so a user is signed in automatically after changing a password.
   # config.sign_in_after_change_password = true
 
-  config.omniauth :github, ENV['GITHUB_APP_ID'], ENV['GITHUB_APP_SECRET'], scope: 'user'
+  config.omniauth :github, Rails.application.credentials.github.app_id, Rails.application.credentials.github.app_secret, scope: 'user'
   OmniAuth.config.logger = Rails.logger if Rails.env.development?
 end
