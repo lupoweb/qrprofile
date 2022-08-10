@@ -1,22 +1,68 @@
-<main class="py-6 px-4 sm:p-6 md:py-10 md:px-8">
-  <div class="max-w-4xl mx-auto grid grid-cols-1 lg:max-w-5xl lg:gap-x-20 lg:grid-cols-2">
-    <div class="relative p-3 col-start-1 row-start-1 flex flex-col-reverse rounded-lg bg-gradient-to-t from-black/75 via-black/0 sm:bg-none sm:row-start-2 sm:p-0 lg:row-start-1">
-      <h1 class="mt-1 text-lg font-semibold text-white sm:text-slate-900 md:text-2xl dark:sm:text-white">Beach House in Collingwood</h1>
-      <div class="flex flex-wrap justify-center">
-        <div class="w-6/12 sm:w-4/12 px-4">
-          <%= image_tag current_user.image_url, class:  'shadow rounded-full max-w-full h-auto align-middle border-none'%>
-          <p></p>
-          <p class="text-sm leading-4 font-medium text-white sm:text-slate-500 dark:sm:text-slate-400"><%=current_user.name%></p>
-        </div>
-      </div>
-    </div>
-    <div class="grid gap-4 col-start-1 col-end-3 row-start-1 sm:mb-6 sm:grid-cols-4 lg:gap-6 lg:col-start-2 lg:row-end-6 lg:row-span-6 lg:mb-0">
-      <%= @svg.html_safe %>
-      <div class="mt-4 col-start-1 row-start-3 self-center sm:mt-0 sm:col-start-2 sm:row-start-2 sm:row-span-2 lg:mt-6 lg:col-start-1 lg:row-start-3 lg:row-end-4">
-        <button type="button" class="bg-gray-800 text-white text-sm leading-6 font-medium py-2 px-3 rounded-lg">Create Card</button>
-        <button type="button" class="bg-gray-800 text-white text-sm leading-6 font-medium py-2 px-3 rounded-lg">Download QrCOde</button>
-      </div>
-    </div>
-  </div>
-</main>
+<div id="profile" class="w-full lg:w-3/5 rounded-lg lg:rounded-l-lg lg:rounded-r-none shadow-2xl bg-white opacity-75 mx-6 lg:mx-0">
+	
 
+		<div class="p-4 md:p-12 text-center lg:text-left">
+			<!-- Image for mobile view-->
+      <%= image_tag current_user.image_url, class: ' rounded-full shadow-l mx-auto -mt-16 h-48 w-48 bg-cover bg-center', style: 'max-height: 200px; max-width: 200px; margin-left:25%; margi-bottom: 20%;'%>
+
+			
+			<h1 class="text-3xl font-bold pt-8 lg:pt-0"><%=current_user.name%></h1>
+	
+
+			<div class="pt-12 pb-8">
+				<button class="bg-green-700 hover:bg-green-900 text-white font-bold py-2 px-4 rounded-full">
+				  Download Your Github's Card
+				</button> 
+			</div>
+		</div>
+
+	</div>
+	
+	<!--Qr Col-->
+	<div class="w-full lg:w-2/5">
+    <%= @svg.html_safe %>	
+	</div>
+	
+	
+	<!-- Pin to top right corner -->
+	  <div class="absolute top-0 right-0 h-12 w-18 p-4">
+		<button class="js-change-theme focus:outline-none">🌙</button>
+	  </div>
+
+</div>
+
+
+	<script src="https://unpkg.com/popper.js@1/dist/umd/popper.min.js"></script>
+	<script src="https://unpkg.com/tippy.js@4"></script>
+	<script>
+		//Init tooltips
+		tippy('.link',{
+		  placement: 'bottom'
+		})
+
+		//Toggle mode
+		const toggle = document.querySelector('.js-change-theme');
+		const body = document.querySelector('body');
+		const profile = document.getElementById('profile');
+		
+		
+		toggle.addEventListener('click', () => {
+
+		  if (body.classList.contains('text-gray-900')) {
+			toggle.innerHTML = "☀️";
+			body.classList.remove('text-gray-900');
+			body.classList.add('text-gray-100');
+			profile.classList.remove('bg-white');
+			profile.classList.add('bg-gray-900');
+		  } else
+		  {
+			toggle.innerHTML = "🌙";
+			body.classList.remove('text-gray-100');
+			body.classList.add('text-gray-900');
+			profile.classList.remove('bg-gray-900');			
+			profile.classList.add('bg-white');
+			
+		  }
+		});
+		
+    </script>

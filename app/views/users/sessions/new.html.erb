@@ -1,4 +1,7 @@
 <%- resource_class.omniauth_providers.each do |provider| %>
   <%= link_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider), method: :post %><br />
 <% end %>
-
+<div class="fixed bottom-0 left-0 right-0 z-40 px-4 py-3 text-center text-white bg-gray-800">
+  <div class="relative py-16 bg-gradient-to-br from-sky-50 to-gray-200">
+  </div>
+</div>
